@@ -1,3 +1,7 @@
-  SELECT p.PeakName
-    FROM Peaks AS p
-ORDER BY p.PeakName
+--  SELECT p.PeakName
+--    FROM Peaks AS p
+--ORDER BY p.PeakName
+
+SELECT PeakName 
+FROM Peaks
+ORDER BY PeakName
