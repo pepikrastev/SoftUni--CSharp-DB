@@ -20,8 +20,7 @@ BEGIN
 								WHERE StudentId = @studentId
 								AND Grade BETWEEN @grade AND @grade + 0.5)
 
- RETURN CONCAT('You have to update ', @countOfGrades, ' grades for the student ', (SELECT FirstName FROM Students
-																					WHERE Id = @studentId))
+ RETURN CONCAT('You have to update ', @countOfGrades, ' grades for the student ', (SELECT FirstName FROM Students WHERE Id = @studentId))
 END
 
 --SELECT dbo.udf_ExamGradesToUpdate(121, 5.50)
