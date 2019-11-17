@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace FastFood.Web.ViewModels.Orders
+﻿namespace FastFood.Web.ViewModels.Orders
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class CreateOrderInputModel
     {
         [Required]

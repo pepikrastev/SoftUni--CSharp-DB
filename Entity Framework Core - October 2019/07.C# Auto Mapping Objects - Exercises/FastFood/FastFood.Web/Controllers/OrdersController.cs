@@ -46,14 +46,14 @@
             order.DateTime = DateTime.Now;
             order.Type = Enum.Parse<OrderType>(model.Type);
 
-            var item = context.Items.FirstOrDefault(i => i.Id == model.ItemId);
-            var employee = context.Employees.FirstOrDefault(e => e.Id == model.EmployeeId);
+            //var item = context.Items.FirstOrDefault(i => i.Name == model.ItemName);
+            //var employee = context.Employees.FirstOrDefault(e => e.Name == model.EmployeeName);
 
-            order.Employee = employee;
+            //order.Employee = employee;
 
             order.OrderItems.Add(new OrderItem
             {
-                ItemId = item.Id,
+                ItemId = model.ItemId,
                 Order = order,
                 Quantity = model.Quantity
             });
@@ -68,9 +68,9 @@
         public IActionResult All()
         {
             var orders = this.context
-               .Orders
-               .ProjectTo<OrderAllViewModel>(mapper.ConfigurationProvider)
-               .ToList();
+                .Orders
+                .ProjectTo<OrderAllViewModel>(mapper.ConfigurationProvider)
+                .ToList();
 
             return this.View(orders);
         }

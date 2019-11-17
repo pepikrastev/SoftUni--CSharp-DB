@@ -55,7 +55,7 @@
 
             this.CreateMap<Order, OrderAllViewModel>()
                 .ForMember(x => x.OrderId, y => y.MapFrom(s => s.Id))
-                .ForMember(x => x.Employee, y => y.MapFrom(o => o.Employee.Id))
+                .ForMember(x => x.Employee, y => y.MapFrom(o => o.Employee.Name))
                 .ForMember(x => x.DateTime, y => y.MapFrom(o => o.DateTime.ToString("g")));
         }
     }
