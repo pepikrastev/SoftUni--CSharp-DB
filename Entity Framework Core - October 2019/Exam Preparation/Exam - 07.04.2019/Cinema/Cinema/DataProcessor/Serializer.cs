@@ -48,13 +48,6 @@
 
         public static string ExportTopCustomers(CinemaContext context, int age)
         {
-            //var customers = context.Customers
-            //    .Select(e => new
-            //    {
-            //        SpentTime = new DateTime(e.Tickets
-            //                                .Sum(t => t.Projection.Movie.Duration.Ticks))
-            //                                .ToString("hh\\:mm\\:ss")
-            //    });
 
             var customers = context.Customers
                 .Where(c => c.Age >= age)
